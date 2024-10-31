@@ -6,8 +6,8 @@ import SelectLocation from "./_components/SelectLocation";
 import LocationCard from "./_components/LocationCard";
 import FormNewLocation from "./_components/FormNewLocation";
 const LocationsPage = async ({
-    searchParams,
-  }: {
+  searchParams,
+}: {
   searchParams: { [key: string]: string | string[] | undefined };
 }) => {
   const userCookies = cookies();
@@ -33,14 +33,15 @@ const LocationsPage = async ({
     <div className="w-7/12">
       <div className="w-full flex flex-col items-center h-[90vh] bg-red-50">
         <div className="w-1/2 my-10">
-        <SelectLocation locations={data} store={searchParams.store} />
+          <SelectLocation locations={data} store={searchParams.store} />
         </div>
-            <div className="w-8/12">
-                <LocationCard store={searchParams.store} />
-            </div>
-            <FormNewLocation/>
+        <div className="w-8/12">
+          <LocationCard store={searchParams.store} />
+        </div>
+        <FormNewLocation/>
       </div>
     </div>
   );
 };
+
 export default LocationsPage;

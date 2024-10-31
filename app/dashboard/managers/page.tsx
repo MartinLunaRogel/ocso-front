@@ -1,4 +1,5 @@
 const ManagersPage = () => {
-    return null;
-  }
-  export default ManagersPage;
+  return null;
+}
+
+export default ManagersPage;

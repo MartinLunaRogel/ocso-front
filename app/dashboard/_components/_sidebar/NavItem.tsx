@@ -2,10 +2,12 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { ReactNode } from "react";
+
 interface NavItemProps {
   icon: ReactNode
   path: string
 }
+
 const NavItem = ({ icon, path }: NavItemProps) => {
   const pathName = usePathname();
   return (
@@ -14,4 +16,5 @@ const NavItem = ({ icon, path }: NavItemProps) => {
     </Link>
   )
 }
+
 export default NavItem;
