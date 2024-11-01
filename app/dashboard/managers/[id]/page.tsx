@@ -5,6 +5,8 @@ import { Card, CardBody, CardHeader, Divider } from "@nextui-org/react";
 import ManagerCard from "./_components/ManagerCard";
 import DeleteManagerButton from "./_components/DeleteManagerButton";
 import { Suspense } from "react";
+import FormUpdateManager from "./_components/FormUpdateManager";
+import UpdateManager from "./_components/UpdateManager";
 export default async function ManagerPage({
   params,
 }: {
@@ -24,7 +26,10 @@ export default async function ManagerPage({
   return (
     <div className="flex flex-col gap-10 flex-grow-0 items-center justify-center">
       <ManagerCard manager={data} />
-      <div className="bg-white shadow-medium rounded-md px-10 py-2">
+      <div className="bg-white shadow-medium rounded-md px-10 py-2 flex flex-row flex-grow-0 gap-2">
+        <UpdateManager>
+          <FormUpdateManager manager={data} />
+        </UpdateManager>
         <DeleteManagerButton managerId={data.managerId} />
       </div>
     </div>
