@@ -12,18 +12,14 @@ const LocationsPage = async ({
 }: {
   searchParams: { [key: string]: string | string[] | undefined };
 }) => {
-  const response = await fetch(
+  let { data } = await axios.get<Location[]>(
     `${API_URL}/locations`,
     {
       headers: {
         ...authHeaders()
       },
-      next: {
-        tags: ["dashboard:locations"]
-      }
     },
   );
-  let data: Location[] = await response.json()
   data = [
     {
       locationId: 0,
