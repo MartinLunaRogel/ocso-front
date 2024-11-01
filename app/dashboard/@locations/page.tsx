@@ -1,12 +1,12 @@
+import axios from "axios";
+import { cookies } from "next/headers";
 import { Location } from "@/entities";
 import { API_URL, TOKEN_NAME } from "@/constants";
 import SelectLocation from "./_components/SelectLocation";
 import LocationCard from "./_components/LocationCard";
 import FormNewLocation from "./_components/FormNewLocation";
-import FormUpdateLocation from "./_components/FormUpdateLocation";
 import DeleteLocationButton from "./_components/DeleteLocationButton";
 import { authHeaders } from "@/helpers/authHeaders";
-import UpdateLocation from "./_components/UpdateLocation";
 const LocationsPage = async ({
   searchParams,
 }: {
@@ -45,12 +45,7 @@ const LocationsPage = async ({
         <div className="w-6/12">
         <FormNewLocation store={searchParams.store}/>
         </div>
-        <div className="flex flex-row flex-grow-0 gap-10  items-center">
         <DeleteLocationButton store={searchParams.store} />
-        <UpdateLocation store={searchParams.store}>
-          <FormUpdateLocation store={searchParams.store}/>
-        </UpdateLocation>
-        </div>
       </div>
     </div>
   );
